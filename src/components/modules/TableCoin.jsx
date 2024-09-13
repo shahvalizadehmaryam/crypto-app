@@ -1,3 +1,4 @@
+import { RotatingLines } from "react-loader-spinner";
 import TableRow from "./TableRow";
 function TableCoin({ coins, isLoading }) {
   console.log(coins);
