@@ -1,7 +1,7 @@
 import { RotatingLines } from "react-loader-spinner";
 import TableRow from "./TableRow";
 import styles from "./TableCoin.module.css";
-function TableCoin({ coins, isLoading }) {
+function TableCoin({ coins, isLoading , currency}) {
   console.log(coins);
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ function TableCoin({ coins, isLoading }) {
           </thead>
           <tbody>
             {coins.map((coin) => (
-              <TableRow key={coin.id} coin={coin} />
+              <TableRow key={coin.id} coin={coin} currency={currency} />
             ))}
           </tbody>
         </table>
