@@ -6,7 +6,7 @@ function TableCoin({ coins, isLoading , currency}) {
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <RotatingLines visible={true} color="#3874ff" strokeWidth="2" />
+        <RotatingLines visible={true} strokeColor="#3874ff" strokeWidth="2" />
       ) : (
         <table className={styles.table}>
           <thead>
