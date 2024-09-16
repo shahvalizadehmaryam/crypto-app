@@ -1,7 +1,7 @@
 import { RotatingLines } from "react-loader-spinner";
 import TableRow from "./TableRow";
 import styles from "./TableCoin.module.css";
-function TableCoin({ coins, isLoading , currency}) {
+function TableCoin({ coins, isLoading , currency,setChart}) {
   console.log(coins);
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ function TableCoin({ coins, isLoading , currency}) {
           </thead>
           <tbody>
             {coins.map((coin) => (
-              <TableRow key={coin.id} coin={coin} currency={currency} />
+              <TableRow key={coin.id} coin={coin} currency={currency} setChart={setChart} />
             ))}
           </tbody>
         </table>
@@ -30,26 +30,3 @@ function TableCoin({ coins, isLoading , currency}) {
 }
 
 export default TableCoin;
-
-// const TableRow = ({coin:{image,symbol,name,current_price,price_change_percentage_24h,total_volume}}) => {
-//   return (
-//     <tr>
-//       <td>
-//         <div>
-//           <img src={image} alt="coin image" />
-//           <span>{symbol.toUpperCase()}</span>
-//         </div>
-//       </td>
-//       <td>{name}</td>
-//       <td>${current_price.toLocaleString()}</td>
-//       <td>{price_change_percentage_24h.toFixed(2)}%</td>
-//       <td>{total_volume.toLocaleString()}</td>
-//       <td>
-//         <img
-//           src={price_change_percentage_24h > 0 ? chartUp : chartDown}
-//           alt={name}
-//         />
-//       </td>
-//     </tr>
-//   );
-// };
