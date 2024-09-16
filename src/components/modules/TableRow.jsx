@@ -6,7 +6,6 @@ const TableRow = ({coin,currency,setChart}) => {
    const {id,image,symbol,name,current_price,price_change_percentage_24h,total_volume} = coin;
    const showHandler = async() => {
     try {
-      console.log("coin in tablerow",coin);
       const res = await fetch(marketCaps(id));
       const json = await res.json();
       console.log("json",json);
