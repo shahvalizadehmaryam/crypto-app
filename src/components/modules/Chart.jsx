@@ -10,7 +10,7 @@ import {
   Tooltip,
   YAxis,
 } from "recharts";
-const Chart = ({ chart, setChart }) => {
+const Chart = ({ chart, setChart,currency }) => {
   const [type, setType] = useState("prices");
   const typesHandler = (event) => {
     if(event.target.tagName === "BUTTON"){
@@ -41,11 +41,11 @@ const Chart = ({ chart, setChart }) => {
         <div className={styles.details}>
         <div>
             <p>Prices:</p>
-            <span>${chart.coin.current_price}</span>
+            <span>{currency === "usd" ? "$" : currency=== "eur" ? "€": "¥"}{chart.coin.current_price}</span>
           </div>
           <div>
             <p>ATH:</p>
-            <span>${chart.coin.ath}</span>
+            <span>{currency === "usd" ? "$" : currency=== "eur" ? "€": "¥"}{chart.coin.ath}</span>
           </div>
           <div>
             <p>Market Cap:</p>
