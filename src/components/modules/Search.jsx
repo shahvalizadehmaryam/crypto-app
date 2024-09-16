@@ -49,15 +49,19 @@ const Search = ({ currency, setCurrency }) => {
         <option value="eur">EUR</option>
         <option value="jpy">JPY</option>
       </select>
+      {/* if(coins.length > 0) */}
+      {(!! coins.length || isLoading) && (
       <div className={styles.searchResult}>
-        {isLoading && <RotatingLines width="60" height="60" strokeWidth="2" strokeColor="#3874ff" />}
-        <ul>
-          {coins.map((coin => <li key={coin.id}>
-            <img src={coin.thumb} alt={coin.name} />
-            {coin.symbol}
-          </li>))}
-        </ul>
-      </div>
+      {isLoading && <RotatingLines width="60" height="60" strokeWidth="2" strokeColor="#3874ff" />}
+      <ul>
+        {coins.map((coin => <li key={coin.id}>
+          <img src={coin.thumb} alt={coin.name} />
+          {coin.symbol}
+        </li>))}
+      </ul>
+    </div>
+      )}
+
     </div>
   );
 };

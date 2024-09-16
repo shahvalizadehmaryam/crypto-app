@@ -15,6 +15,18 @@
 .searchBox input:focus{
     outline: none;
 }
+.searchBox select{
+    background-color: #23242e;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    color: #fff;
+    padding: 0 10px;
+}
+.searchBox select:focus{
+    outline: none;
+}
 .searchResult{
     position: absolute;
     text-align: center;

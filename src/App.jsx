@@ -5,7 +5,6 @@ function App() {
  
   return (
     <>
-         <h3>crypto-app</h3>
          <HomePage />
     </>
   )
