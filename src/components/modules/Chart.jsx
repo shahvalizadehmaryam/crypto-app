@@ -12,7 +12,12 @@ import {
 } from "recharts";
 const Chart = ({ chart, setChart }) => {
   const [type, setType] = useState("prices");
-  console.log("chart", chart);
+  const typesHandler = (event) => {
+    if(event.target.tagName === "BUTTON"){
+       const type = event.target.innerText.toLowerCase().replace(" ", "_");
+       setType(type);
+    }
+  }
   return (
     <div className={styles.container}>
       <span className={styles.cross} onClick={() => setChart(null)}>
@@ -26,12 +31,12 @@ const Chart = ({ chart, setChart }) => {
         <div className={styles.graph}>
           <ChartComp data={convertData(chart, type)} type={type} />
         </div>
-        <div className={styles.types}>
+        <div className={styles.types} onClick={typesHandler} >
           <button className={type === "prices" ? styles.selected : null}>
             Prices
           </button>
-          <button>Market Caps</button>
-          <button>Total Volumes</button>
+          <button className={type === "market_caps" ? styles.selected : null}>Market Caps</button>
+          <button className={type === "total_volumes" ? styles.selected : null}>Total Volumes</button>
         </div>
         <div className={styles.details}>
         <div>
