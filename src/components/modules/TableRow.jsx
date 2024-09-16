@@ -9,7 +9,7 @@ const TableRow = ({coin,currency,setChart}) => {
       const res = await fetch(marketCaps(id));
       const json = await res.json();
       console.log("json",json);
-      setChart(json);
+      setChart({...json,coin});
       
     } catch (error) {
       setChart(null);
